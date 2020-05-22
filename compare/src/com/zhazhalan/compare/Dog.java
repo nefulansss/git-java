@@ -1,17 +1,17 @@
-package entity;
+package com.zhazhalan.compare;
 
 /**
  * @Author: zhanglan61
- * @Date: 2020/5/22 19:50
+ * @Date: 2020/5/22 20:15
  * @Version: 1.0
  */
-public class Dog {
+public class Dog implements Comparable<Dog> {
     /**
-     * 姓名
+     * 名字
      */
     private String name;
     /**
-     * 面临
+     * 年龄
      */
     private Integer age;
 
@@ -31,6 +31,14 @@ public class Dog {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     public Integer getAge() {
         return age;
     }
@@ -39,11 +47,14 @@ public class Dog {
         this.age = age;
     }
 
+    /**
+     * 根据年龄排序
+     * @param o
+     * @return
+     */
     @Override
-    public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public int compareTo(Dog o) {
+        return this.age>o.age?1:-1;
     }
+
 }
