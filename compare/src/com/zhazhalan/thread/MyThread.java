@@ -11,6 +11,6 @@ public class MyThread extends Thread {
     @Override
     public void run() {
         System.out.println("我是mythread线程");
-        System.out.println("我是dev");
+        System.out.println("我是v1.0.0");
     }
 }
